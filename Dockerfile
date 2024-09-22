@@ -1,20 +1,20 @@
 # Base image
 FROM node:16-alpine
 
-# Set working directory
+# Set working dir
 WORKDIR /app
 
-# Copy package.json and package-lock.json
+# Copy the required packages
 COPY package*.json ./
 
-# Install dependencies
+# Install the required dependencies
 RUN npm install
 
-# Copy the rest of the application files
+# Copy the application files
 COPY . .
 
-# Expose port
+# Expose the port
 EXPOSE 5000
 
-# Command to run the backend app
+# Command to runwhen the container starts
 CMD ["npm", "start"]
